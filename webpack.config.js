@@ -7,10 +7,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
+    publicPath: "/"
   },
   mode: "development",
   resolve: {
     extensions: [".js", ".jsx"],
+    alias: {
+      "@images" : path.resolve(__dirname, "public/assets/images/")
+    }
   },
   module: {
     rules: [
@@ -54,6 +58,7 @@ module.exports = {
     })
   ],
   devServer: {
+    historyApiFallback: true,
     static: { 
       directory: path.join(__dirname, "dist"), 
       watch: true, 
