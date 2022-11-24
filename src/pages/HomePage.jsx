@@ -1,7 +1,9 @@
 import React from 'react'
 import { HeroBackground } from '../components/HeroBackground'
 import { HeroContent } from '../components/HeroContent'
+import { Product } from '../components/Product'
 import { Hero } from '../containers/Hero'
+import { PopularProducts } from '../containers/PopularProducts'
 
 export const HomePage = () => {
   return (
@@ -11,6 +13,9 @@ export const HomePage = () => {
         <HeroContent />
       </Hero>
 
+      <PopularProducts>
+        <Product />
+      </PopularProducts>
 
 
 

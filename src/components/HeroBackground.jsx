@@ -1,5 +1,5 @@
 import React from 'react'
-import bgHomeMobile from "@images/homeBgMobile.jpg"
+import bgHomeMobile from "@images/homeBgMobile2.jpg"
 
 export const HeroBackground = () => {
   return (
