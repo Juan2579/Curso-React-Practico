@@ -15,6 +15,11 @@ export const HomePage = () => {
 
       <PopularProducts>
         <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
       </PopularProducts>
 
 
