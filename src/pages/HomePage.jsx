@@ -2,7 +2,6 @@ import React from 'react'
 import { Hero } from '../containers/Hero'
 import { Background } from "../components/Background"
 import { HeroContent } from '../components/HeroContent'
-import { Product } from '../components/Product'
 import { PopularProducts } from '../containers/PopularProducts'
 
 export const HomePage = () => {
@@ -13,16 +12,7 @@ export const HomePage = () => {
         <HeroContent />
       </Hero>
 
-      <PopularProducts>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-      </PopularProducts>
-
-
+      <PopularProducts />
 
     </main>
   )

@@ -9,7 +9,7 @@ export const CreateAccountForm = () => {
   }
 
   return (
-    <form className="w-[90%] h-4/5 z-10 mx-auto flex flex-col justify-center items-center text-left gap-2">
+    <form className="w-[90%] h-4/5 z-10 mx-auto flex flex-col justify-center items-center text-left gap-2 lg:w-[30%]">
       <button type='button' onClick={backToLogin} className="absolute top-8 left-5">
         <svg className="w-12 fill-current text-white" viewBox="0 0 612 612">
           <g>
@@ -26,20 +26,21 @@ export const CreateAccountForm = () => {
           </g>
         </svg>
       </button>
-      <h1 className="w-full font-bold text-4xl">Create Account</h1>
-      <div className="w-full flex flex-col gap-5 pt-3 py-2">
+      <h1 className="w-full font-bold text-4xl lg:text-5xl">Create Account</h1>
 
-        <label htmlFor='name' className="w-full h-14 flex justify-center items-center gap-3 px-5 shadow-2xl bg-gray-50">
-          <svg className="w-5" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+      <div className="w-full flex flex-col gap-5 pt-3 py-2 lg:gap-7">
+
+        <label htmlFor='name' className="w-full h-14 flex justify-center items-center gap-3 px-5 border rounded-lg shadow-2xl bg-gray-50 lg:w-[90%] lg:h-16 lg:gap-4">
+          <svg className="w-5 lg:w-7" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
             <path d="M25,1A24,24,0,1,0,49,25,24,24,0,0,0,25,1Zm0,46A22,22,0,1,1,47,25,22,22,0,0,1,25,47Z"/>
             <path d="M25,25.41a13,13,0,0,0-13,13,1,1,0,0,0,2,0,11,11,0,1,1,22,0,1,1,0,0,0,2,0A13,13,0,0,0,25,25.41Z"/>
             <path d="M25,23.71a7,7,0,0,0,6.81-7.2A7,7,0,0,0,25,9.3a7,7,0,0,0-6.81,7.21A7,7,0,0,0,25,23.71ZM25,11.3a5,5,0,0,1,4.81,5.21A5,5,0,0,1,25,21.71a5,5,0,0,1-4.81-5.2A5,5,0,0,1,25,11.3Z"/>
           </svg>  
-          <input id='name' className="w-full outline-none bg-gray-50 text-sm" placeholder='FULL NAME' type="text" required/>
+          <input id='name' className="w-full outline-none bg-gray-50 text-sm lg:text-base" placeholder='FULL NAME' type="text" required/>
         </label>
 
-        <label htmlFor='email' className="w-full h-14 flex justify-center items-center gap-3 px-5 shadow-2xl bg-gray-50">
-          <svg className="w-5"  viewBox="0 0 512 512" >
+        <label htmlFor='email' className="w-full h-14 flex justify-center items-center gap-3 px-5 border rounded-lg shadow-2xl bg-gray-50 lg:w-[90%] lg:h-16 lg:gap-4">
+          <svg className="w-5 lg:w-7"  viewBox="0 0 512 512" >
             <g>
               <path d="M448,64H64C28.656,64,0,92.656,0,128v256c0,35.344,28.656,64,64,64h384c35.344,0,64-28.656,64-64V128
               C512,92.656,483.344,64,448,64z M342.656,234.781l135.469-116.094c0.938,3,1.875,6,1.875,9.313v256
@@ -50,11 +51,11 @@ export const CreateAccountForm = () => {
               H64z"/>
             </g>
           </svg>
-          <input id='email' className="w-full outline-none bg-gray-50 text-sm" placeholder='EMAIL' type="email" required/>
+          <input id='email' className="w-full outline-none bg-gray-50 text-sm lg:text-base" placeholder='EMAIL' type="email" required/>
         </label>
 
-        <label htmlFor='password' className="w-full h-14 flex justify-center items-center gap-3 px-5 shadow-2xl bg-gray-50">
-          <svg className="w-5" viewBox="0 0 766.615 766.615">
+        <label htmlFor='password' className="w-full h-14 flex justify-center items-center gap-3 px-5 border rounded-lg shadow-2xl bg-gray-50 lg:w-[90%] lg:h-16 lg:gap-4">
+          <svg className="w-5 lg:w-7" viewBox="0 0 766.615 766.615">
             <g>
               <g>
                 <path d="M545.308,766.615h-324c-79.406,0-144-64.595-144-144V418.67c0-46.203,22.752-89.527,60.233-116.434
@@ -78,20 +79,20 @@ export const CreateAccountForm = () => {
               </g>
             </g>
           </svg>
-          <input id='password' className="w-full outline-none bg-gray-50 text-2xl font-[small-caption] placeholder:text-sm placeholder:font-KumbhSans" placeholder='PASSWORD' type="password" required />
+          <input id='password' className="w-full outline-none bg-gray-50 text-2xl font-[small-caption] placeholder:text-sm placeholder:font-KumbhSans lg:placeholder:text-base" placeholder='PASSWORD' type="password" required />
         </label>
 
       </div>
       <div className='w-full flex justify-end pb-1'>
-        <button type='submit' className="w-32 h-10 rounded-3xl flex justify-center items-center gap-3 bg-mainOrange shadow-xl">
-          <span className='text-white text-base font-bold'>SIGN UP</span>
-          <svg className='w-5 fill-current text-white pt-[2px]' viewBox="0 0 15.698 8.706" >
+        <button type='submit' className="w-32 h-10 rounded-3xl flex justify-center items-center gap-3 bg-mainOrange shadow-xl lg:w-36 lg:h-12">
+          <span className='text-white text-base font-bold lg:text-lg'>SIGN UP</span>
+          <svg className='w-5 fill-current text-white pt-[2px] lg:w-6' viewBox="0 0 15.698 8.706" >
             <polygon points="11.354,0 10.646,0.706 13.786,3.853 0,3.853 0,4.853 13.786,4.853 10.646,8 11.354,8.706 15.698,4.353 "/>
           </svg>
         </button>
       </div>
       
-      <Link to={`/profile`} className='flex items-center justify-center gap-2 h-10 px-4 bg-gray-50 shadow-lg  text-gray-600 text-base absolute bottom-10 rounded-full'>Already have an account?<span className='text-mainOrange font-bold'>Sign in</span></Link>
+      <Link to={`/profile`} className='flex items-center justify-center gap-2 h-10 px-4 bg-gray-50 shadow-lg  text-gray-600 text-base absolute bottom-10 border rounded-full lg:h-14 lg:text-xl lg:px-7'>Already have an account?<span className='text-mainOrange font-bold'>Sign in</span></Link>
     </form>
   )
 }
