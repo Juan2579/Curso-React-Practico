@@ -1,9 +1,51 @@
-import React from 'react'
+import React, { useRef, useState, useEffect, createRef, useContext } from 'react'
 import logo from "@images/logo.svg"
+import { ProfileDropdown } from './ProfileDropdown'
+import { useHistory } from 'react-router-dom'
+import { AppContext } from '../context/AppContext'
+
+
 export const Nav = () => {
+  // const containerRef = useRef(null)
+  // const [dropdownProfile, setDropdownProfile] = useState(false)
+
+  // const callbackFunction = (entries) => {
+  //   const [entry] = entries
+  //   if(!entry.isIntersecting){
+  //     setDropdownProfile(false)
+  //   }
+  // }
+  // const options = {
+  //   root: null,
+  //   rootMargin: "0px",
+  //   threshold: 0.1
+  // }
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(callbackFunction, options)
+
+  //   if(containerRef.current) observer.observe(containerRef.current)
+
+  //   return () => {
+  //     if(containerRef.current) observer.unobserve(containerRef.current)
+  //   }
+  // }, [containerRef, options])
+  // const toggleProfile = () => {
+  //   setDropdownProfile((prevState) => !prevState)
+  // }
+  const history = useHistory()
+
+  const goToProfile =  () => {
+    history.push("/profile")
+  }
+
+  const goToCart = () => {
+    history.push("/cart")
+  }
+
+  const { state } = useContext(AppContext)
   return (
     <nav className="flex justify-between items-center list-none px-4 py-4">
-      <ul className="flex justify-center items-center gap-3 pt-1">
+      <ul className="flex justify-center items-center gap-3 pt-2">
         <li>
           <button>
             <svg className="w-8 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -11,15 +53,14 @@ export const Nav = () => {
             </svg>
           </button>
         </li>
-
         <li>
           <img className="w-32 pb-2" src={logo} alt="" />
         </li>
       </ul>
 
-      <ul className="flex justify-center items-center gap-5">
+      <ul className="flex justify-center items-center gap-5 pt-1.5">
         <li>
-          <button>
+          <button onClick={goToCart} className='relative'>
             <svg className="w-7" viewBox="0 0 299.915 299.915" >
               <g>
                 <path d="M293.494,53.616H55.701c-0.463,0-0.88,0.174-1.318,0.27l-9.672-32.115c-0.109-0.347-0.341-0.604-0.495-0.925
@@ -37,19 +78,27 @@ export const Nav = () => {
                   l-161.011,0.129L58.176,66.476h227.201L254.04,182.03z"/>
               </g>
             </svg>
+            {(state.cart.length > 0) && 
+              <span className="min-w-[19px] max-w-[20px] h-5 absolute top-[-15px] right-[-10px] flex justify-center items-center bg-mainOrange text-white rounded-full text-xs font-bold"
+              >
+                {state.cart.length > 9 ? "9+" : state.cart.length}
+              </span>
+            }
           </button>
         </li>
         <li>
-          <button>
+          <button onClick={goToProfile}>
             <svg className="w-7" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
               <path d="M25,1A24,24,0,1,0,49,25,24,24,0,0,0,25,1Zm0,46A22,22,0,1,1,47,25,22,22,0,0,1,25,47Z"/>
               <path d="M25,25.41a13,13,0,0,0-13,13,1,1,0,0,0,2,0,11,11,0,1,1,22,0,1,1,0,0,0,2,0A13,13,0,0,0,25,25.41Z"/>
               <path d="M25,23.71a7,7,0,0,0,6.81-7.2A7,7,0,0,0,25,9.3a7,7,0,0,0-6.81,7.21A7,7,0,0,0,25,23.71ZM25,11.3a5,5,0,0,1,4.81,5.21A5,5,0,0,1,25,21.71a5,5,0,0,1-4.81-5.2A5,5,0,0,1,25,11.3Z"/>
             </svg>  
           </button>
+          {/* {dropdownProfile && 
+            <ProfileDropdown reference={containerRef} />
+          } */}
         </li>
       </ul>
-      
     </nav>
   )
 }
