@@ -73,7 +73,7 @@ export const CartProducts = () => {
           </g>
         </svg>
       </div>
-      <div className="w-full h-full py-4 px-2 snap-x overflow-y-auto flex flex-col rounded-md bg-gray-300 gap-3 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 lg:w-2/5 md:px-10">
+      <div className="w-full h-full py-4 px-2 snap-x overflow-y-auto flex flex-col rounded-md bg-gray-300 gap-3 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-40 border border-gray-100 xl:w-2/4 2xl:w-2/5 md:px-10">
         {
           cart.map((product, index) => {
             return <CartItem key={index} product={product} deleteFromCart={deleteFromCart} />
