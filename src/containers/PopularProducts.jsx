@@ -23,8 +23,8 @@ export const PopularProducts = () => {
             <Skeleton />
             <Skeleton />
           </>
-        : products.map(product => {
-            return <Product loading={loading} key={product.id} product={product} />
+        : products.map((product, index) => {
+            return <Product loading={loading} key={index} product={product} />
           })
       }
       </div>
